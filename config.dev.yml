@@ -1,0 +1,28 @@
+dev:
+  debug: false
+  version: 0.1
+  maintainer:
+    name: Théo Vidal
+    link: exybore@becauseofprog.fr
+bot:
+  name: Bop Le Développeur
+  id: 558337741281165332
+  illustration: https://cdn.discordapp.com/app-icons/558337741281165332/3a03d8c88c0f131ef83dca20e7bf54b3.png?size=256
+  website: https://github.com/BecauseOfProg/bop-le-bricoleur
+  prefix: "!dev "
+  color: 6313215
+database:
+  address: localhost
+  port: 25450
+  database: bob
+  auth_source: bob
+categories:
+  default:
+    name: Utilitaires
+    emoji: wrench
+  management:
+    name: Gestion
+    emoji: pushpin
+cache:
+  address: localhost
+  port: 6379
