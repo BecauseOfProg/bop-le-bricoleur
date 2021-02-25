@@ -22,12 +22,15 @@ var pingSentences = []string{
 
 func Ping() *onyxcord.Command {
 	return &onyxcord.Command{
-		Description: "Tester si le robot répond correctement",
-		Usage:       "ping",
-		ListenInDM:  true,
-		Execute: func(arguments []string, bot onyxcord.Bot, message *discordgo.MessageCreate) (err error) {
+		ListenInDM: true,
+		Execute: func(bot *onyxcord.Bot, interaction *discordgo.InteractionCreate) (err error) {
 			sentenceNumber := rand.Intn(len(pingSentences))
-			_, err = bot.Client.ChannelMessageSend(message.ChannelID, pingSentences[sentenceNumber])
+			_ = bot.Client.InteractionRespond(interaction.Interaction, &discordgo.InteractionResponse{
+				Type: discordgo.InteractionResponseChannelMessageWithSource,
+				Data: &discordgo.InteractionApplicationCommandResponseData{
+					Content: pingSentences[sentenceNumber],
+				},
+			})
 			return
 		},
 	}

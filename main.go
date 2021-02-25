@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	bot := onyxcord.RegisterBot("Bop Le Bricoleur", true)
+	bot := onyxcord.RegisterBot("Bop Le Bricoleur")
 
 	// bot.RegisterCommand("archive", commands.Archive()) TODO: make permissions work in onyxcord
 	bot.RegisterCommand("ping", commands.Ping())
 	bot.RegisterCommand("poll", commands.Poll())
-	//bot.RegisterCommand("reactionRole", reaction_role.ReactionRole())
+	// bot.RegisterCommand("reactionRole", reaction_role.ReactionRole())
 	bot.RegisterCommand("weather", commands.Weather())
 
 	/*bot.Client.AddHandler(func(_ *discordgo.Session, message *discordgo.MessageDelete) {
@@ -25,5 +25,5 @@ func main() {
 		handlers.ReactionRoleRemove(&bot, reaction)
 	})*/
 
-	bot.Run()
+	bot.Run(true)
 }

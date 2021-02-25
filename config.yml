@@ -9,20 +9,13 @@ bot:
   id: 558337741281165332
   illustration: https://cdn.discordapp.com/app-icons/549219394513797130/f2bf63715a6d1e41aea422c3a9c67561.png?size=256
   website: https://github.com/BecauseOfProg/bop-le-bricoleur
-  prefix: "!bop "
   color: 14890803
+  error_color: 12000284
 database:
   address: localhost
   port: 25450
   database: bob
   auth_source: bob
-categories:
-  default:
-    name: Utilitaires
-    emoji: wrench
-  management:
-    name: Gestion
-    emoji: pushpin
 cache:
   address: localhost
   port: 6379
